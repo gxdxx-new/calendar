@@ -10,20 +10,22 @@ public class Prompt {
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
 
-		int month = 0;
-
 		while (true) {
+			System.out.println("년도를 입력하세요.");
+			System.out.print("YEAR> ");
+			int year = scanner.nextInt();
 			System.out.println("달을 입력하세요.");
-			System.out.print(PROMPT);
-			month = scanner.nextInt();
+			System.out.print("MONTH> ");
+			int month = scanner.nextInt();
+
 			if (month == -1) {
 				break;
 			}
 			if (month > 12) {
 				continue;
 			}
-			
-			cal.printCalendar(2017, month);
+
+			cal.printCalendar(year, month);
 		}
 		System.out.println("Bye~");
 		scanner.close();
